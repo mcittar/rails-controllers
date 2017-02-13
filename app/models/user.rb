@@ -3,10 +3,9 @@
 # Table name: users
 #
 #  id         :integer          not null, primary key
-#  name       :string           not null
-#  email      :string           not null
 #  created_at :datetime
 #  updated_at :datetime
+#  username   :text             not null
 #
 
 class User < ActiveRecord::Base
