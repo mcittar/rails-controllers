@@ -21,7 +21,7 @@ class Contact < ActiveRecord::Base
     source: :user
 
   def duplicate_email
-    duplicate = Contact.find_by(user_id: self.user_id, email: self.email)
+    duplicate = Contact.find_by(name: self.name, email: self.email)
 
     if duplicate
       self.errors[:user] << "Already has a contact with this email"
