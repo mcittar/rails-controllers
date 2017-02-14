@@ -9,5 +9,7 @@
 #
 
 class User < ActiveRecord::Base
-  validates :name, :email, presence: true
+  validates :username, presence: true
+
+  has_many :contacts
 end

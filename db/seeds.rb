@@ -7,6 +7,12 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 User.destroy_all
-kenny = User.create!(name: 'Kenny', email: 'kenny@gmail.com')
-cartman = User.create!(name: 'Eric Cartman', email: 'ecartman@gmail.com')
-chef = User.create!(name: 'Chef', email: 'chef@gmail.com')
+Contact.destroy_all
+
+kenny_u = User.create!(username: 'kmckormick')
+cartman_u = User.create!(username: 'ecartman')
+chef_u = User.create!(username: 'chef')
+
+kenny = Contact.create!(name: 'Kenny', email: 'kenny@gmail.com', user_id: chef_u.id)
+cartman = Contact.create!(name: 'Eric Cartman', email: 'ecartman@gmail.com', user_id: kenny_u.id)
+chef = Contact.create!(name: 'Chef', email: 'chef@gmail.com', user_id: kenny_u.id)

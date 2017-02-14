@@ -9,6 +9,19 @@
 #
 
 class Contact < ActiveRecord::Base
-  
+  validates :name, :email, :user_id, presence: true
+  validate :duplicate_email
 
+  belongs_to :owner
+
+  def duplicate_email
+    duplicate = Contact.find_by(user_id: self.user_id, email: self.email)
+
+    if duplicate
+      self.errors[:user] << "Already has a contact with this email"
+      return false
+    end
+
+    true
+  end
 end
