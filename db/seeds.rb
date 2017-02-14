@@ -20,4 +20,4 @@ chef_c = Contact.create!(name: 'Chef', email: 'chef@gmail.com', user_id: kenny_u
 
 share1 = ContactShare.create!(user_id: cartman_u.id, contact_id: kenny_c.id)
 share2 = ContactShare.create!(user_id: cartman_u.id, contact_id: cartman_c.id)
-share1 = ContactShare.create!(user_id: cartman_u.id, contact_id: chef_c.id)
+share3 = ContactShare.create!(user_id: cartman_u.id, contact_id: chef_c.id)
