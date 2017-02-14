@@ -14,6 +14,12 @@ class Contact < ActiveRecord::Base
 
   belongs_to :owner
 
+  has_many :contact_shares
+
+  has_many :shared_users,
+    through: :contact_shares,
+    source: :user
+
   def duplicate_email
     duplicate = Contact.find_by(user_id: self.user_id, email: self.email)
 
